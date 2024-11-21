@@ -99,28 +99,45 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+for (let sayi of sayilar) {
+  if (sayi > enbuyuk) enbuyuk = sayi;
+  if (sayi < enkucuk) enkucuk = sayi;
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+sayilar.forEach((sayi) => {
+  if (sayi % 3 === 0) ucetambolunenler.push(sayi);
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce(
+  (toplam, sayi) => toplam + sayi,
+  0
+);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = [...besyuzdenkucuksayilar].sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
-
+tekraredensayilar = {};
+for (let sayi of sayilar) {
+  tekraredensayilar[sayi] = (tekraredensayilar[sayi] || 0) + 1;
+}
+console.log("En büyük sayı:", enbuyuk);
+console.log("En küçük sayı:", enkucuk);
+console.log("3'e tam bölünenler:", ucetambolunenler);
+console.log("3'e bölünenlerin toplamı:", ucebolunenlerintoplami);
+console.log("500'den küçük sayılar:", besyuzdenkucuksayilar);
+console.log("500'den küçük sıralı sayılar:", siralisayilar);
+console.log("Tekrar eden sayılar:", tekraredensayilar);
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
